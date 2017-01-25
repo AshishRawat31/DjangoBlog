@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Blog.AshishRawat</title>
+	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -12,20 +13,22 @@
 	       {% if user.is_authenticated %}
 		<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 		<a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-		<p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+		<p class="top-menu">Hello {{ user.username }} [<a href="{% url 'logout' %}">Log out</a>]</p>
 		{% else %}
 		<a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-		{% endif %}
+		{% endif %}<br/>
 		<h1><a href="/">Ashish Rawat</a></h1>
 	        <h4>(Inspired by love, Guided by knowledge)</h4>
 	    </div>
-	    <div class="content container">
-		<div class="row">
-		    <div class="col-md-8">
+	    <div class="content">
 		    {% block content %}
 		    {% endblock %}
-		    </div>
-		</div>
+	    </div>
+	    <div class="page-footer">
+		<hr>
+		<p><center>Copyright &copy; <b>A</b>shish <b>R</b>awat<br/>
+Find me on <b><a href="https://github.com/AshishRawat31" style="color: #000000; text-decoration: none;">GitHub</a></b>, or Drop me an <b><a href="mailto:Ashishrawat.dtu31@gmail.com" style="color: #000000; text-decoration: none;">Email</a></b>
+		</center></p>
 	    </div>
 	</body>
 </html>
