@@ -28,11 +28,12 @@ h1 a{
     min-height: calc(100vh - 40px);
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Tahoma', 'Geneva';
+    color: #CA8E02;
 }
 
-h4{
+.Quote{
     color: #727272;
 }
 
